@@ -3,18 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <title>Яндекс.ШРИ в Москве 2013</title>
-    <script src="assets/js/angular.min.js"></script>
-    <script src="js/students.js"></script>
     <link rel="stylesheet" href="assets/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/styles.css"/>
 </head>
 <body>
-<div class="students" ng-controller="StudentsCtrl">
-    <input type="text" data-ng-model="nameFilter"/>
-    <ul class="unstyled">
-        <li ng-repeat="student in students">
-            {{student.first_name}} {{student.last_name}}
-        </li>
-    </ul>
+<div class="container">
+    <div class="students" ng-controller="StudentsCtrl">
+        <div class="form-group">
+            <input type="text" class="form-control" data-ng-model="nameFilter" placeholder="Поиск">
+        </div>
+
+        <ul class="list-group">
+            <li class="list-group-item" ng-repeat="student in students | filter: nameFilter | orderBy: 'last_name'">
+                <div class="profile-picture">user</div>
+                {{student.first_name}} {{student.last_name}}
+            </li>
+        </ul>
+    </div>
 </div>
+
+<div id="nprogress">
+    <div class="bar" role="bar">
+        <div class="peg"></div>
+    </div>
+    <div class="spinner" role="spinner">
+        <div class="spinner-icon"></div>
+    </div>
+</div>
+
+
+<script src="assets/js/jquery-2.0.3.min.js"></script>
+<script src="assets/js/angular.min.js"></script>
+<script src="js/students.js"></script>
 </body>
 </html>
