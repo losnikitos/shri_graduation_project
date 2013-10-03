@@ -1,0 +1,18 @@
+<div class="students" ng-controller="StudentsCtrl">
+    <div class="form-group">
+        <input type="text" class="form-control" data-ng-model="nameFilter" placeholder="Поиск">
+    </div>
+
+    <ul>
+        <li class="person" ng-repeat="student in students | filter: nameFilter | orderBy: 'last_name'">
+            <div class="profile-picture">
+                <a href="#/students/{{student.id}}">
+                    <img ng-src="{{student.link_photo}}">
+                </a>
+            </div>
+            <div class="student-name">
+                <a href="#/students/{{student.id}}">{{student.first_name}}<br>{{student.last_name}}</a>
+            </div>
+        </li>
+    </ul>
+</div>

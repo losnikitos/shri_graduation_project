@@ -1,39 +1,35 @@
 <!doctype html>
-<html lang="ru" ng-app>
+<html lang="ru" ng-app="shri">
 <head>
     <meta charset="UTF-8">
     <title>Яндекс.ШРИ в Москве 2013</title>
+
     <link rel="stylesheet" href="assets/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="css/styles.css"/>
+
+    <script src="assets/js/jquery-2.0.3.min.js"></script>
+    <script src="assets/js/angular.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/controllers.js"></script>
+
+    <!--PROGRESSBAR-->
+    <script src="assets/js/pace.min.js"></script>
+    <link href="assets/css/pace-theme-flash.css" rel="stylesheet" />
+
 </head>
 <body>
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <ul class="nav navbar-nav">
+        <li class="active"><a href="/#about">О школе</a></li>
+        <li><a href="#/students">Студенты</a></li>
+        <li><a href="#/courses">Лекции</a></li>
+     </ul>
+</nav>
+
 <div class="container">
-    <div class="students" ng-controller="StudentsCtrl">
-        <div class="form-group">
-            <input type="text" class="form-control" data-ng-model="nameFilter" placeholder="Поиск">
-        </div>
-
-        <ul class="list-group">
-            <li class="list-group-item" ng-repeat="student in students | filter: nameFilter | orderBy: 'last_name'">
-                <div class="profile-picture">user</div>
-                {{student.first_name}} {{student.last_name}}
-            </li>
-        </ul>
-    </div>
-</div>
-
-<div id="nprogress">
-    <div class="bar" role="bar">
-        <div class="peg"></div>
-    </div>
-    <div class="spinner" role="spinner">
-        <div class="spinner-icon"></div>
-    </div>
+    <div ng-view></div>
 </div>
 
 
-<script src="assets/js/jquery-2.0.3.min.js"></script>
-<script src="assets/js/angular.min.js"></script>
-<script src="js/students.js"></script>
 </body>
 </html>
