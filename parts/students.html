@@ -3,7 +3,7 @@
         <input type="text" class="form-control" data-ng-model="nameFilter" placeholder="Поиск">
     </div>
 
-    <ul>
+    <ul class="app-folders-container">
         <li class="person" ng-repeat="student in students | filter: nameFilter | orderBy: 'last_name'">
             <div class="profile-picture">
                 <a href="#/students/{{student.id}}">

@@ -1,0 +1,5 @@
+Student = new function()
+{
+
+
+}
