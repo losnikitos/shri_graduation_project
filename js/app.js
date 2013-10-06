@@ -26,7 +26,7 @@ $(function () {
 
 function parallaxScroll(el)
 {
-    var yPos = -($(window).scrollTop() / 2);
+    var yPos = -($(window).scrollTop() / 2) - 50;
     var coords = 'center '+ yPos + 'px';
     el.css({ backgroundPosition: coords });
 }

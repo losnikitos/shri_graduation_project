@@ -83,7 +83,7 @@ ul {
 }
 
 .jumbotron {
-    background: url("../img/bg.jpg") center 0 no-repeat;
+    background: url("../img/bg.jpg") center -50px no-repeat;
     background-size: cover;
     min-height: 600px;
     /*opacity:0.4;*/
@@ -123,54 +123,40 @@ ul {
     text-decoration: none;
 }
 
-/*
-#nprogress .bar {
-    background: #46c371;
-    position: fixed;
-    z-index: 100;
-    top: 0;
-    left: 0;
+
+
+
+header {
     width: 100%;
-    height: 2px;
-
-    transition: all 200ms ease;
-    -webkit-transition: all 200ms ease;
-    -webkit-transform: translate3d(-46.96600350085646%, 0px, 0px);
+    height: 60px;
+    position: relative;
+    z-index: 10;
+    border-bottom: 1px solid #cacaca;
 }
 
-#nprogress .peg {
+header .logo {
+    float: left;
+    height: 35px;
+    width: 80px;
+    background: url('../img/yandex.gif') top left no-repeat;
+    background-size: 65px;
+    overflow: hidden;
+    padding: 0;
+    margin: 14px 0 0 0;
+}
+
+header .logo a {
     display: block;
-    position: absolute;
-    right: 0px;
-    width: 100px;
-    height: 100%;
-    box-shadow: 0 4px 10px #46c371,0 2px 5px #46c371;
-    opacity: 1.0;
-    -webkit-transform: rotate(3deg) translate(0px, -4px);
-    -moz-transform: rotate(3deg) translate(0px, -4px);
-    -ms-transform: rotate(3deg) translate(0px, -4px);
-    -o-transform: rotate(3deg) translate(0px, -4px);
-    transform: rotate(3deg) translate(0px, -4px);
+    text-indent: -5000px;   //зато скрин-ридер прочитает
 }
 
-#nprogress .spinner {
-    display: block;
-    position: fixed;
-    z-index: 100;
-    top: 13px;
-    left: 8px;
+header h2
+{
+    font-family: 'PT Sans Narrow', sans-serif;
+    color: #555;
+    font-weight: 300;
+    font-size: 25px;
+    display: inline-block;
+    padding-left: 15px;
+    border-left: 1px solid #cacaca;
 }
-
-#nprogress .spinner-icon {
-    width: 14px;
-    height: 14px;
-    border: solid 2px transparent;
-    border-top-color: #46c371;
-    border-left-color: #46c371;
-    border-radius: 10px;
-    -webkit-animation: nprogress-spinner 400ms linear infinite;
-    -moz-animation: nprogress-spinner 400ms linear infinite;
-    -ms-animation: nprogress-spinner 400ms linear infinite;
-    -o-animation: nprogress-spinner 400ms linear infinite;
-    animation: nprogress-spinner 400ms linear infinite;
-}*/
