@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ru" ng-app="shri">
+<html lang="ru" ng-app>
 <head>
     <meta charset="UTF-8">
     <title>Яндекс.ШРИ в Москве 2013</title>
@@ -9,16 +9,17 @@
 
     <script src="assets/js/jquery-2.0.3.min.js"></script>
     <script src="assets/js/angular.min.js"></script>
-    <script src="assets/js/jquery.parallax.min.js"></script>
     <script src="js/app.js"></script>
     <script src="js/controllers.js"></script>
 
     <!--PROGRESSBAR-->
     <script src="assets/js/pace.min.js"></script>
-    <link href="assets/css/pace-theme-flash.css" rel="stylesheet" />
+    <link href="assets/css/pace-theme-flash.css" rel="stylesheet"/>
 
-    <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow&subset=cyrillic,latin' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700&subset=latin,cyrillic' rel='stylesheet'
+          type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow&subset=cyrillic,latin' rel='stylesheet'
+          type='text/css'>
 
 
 </head>
@@ -26,36 +27,57 @@
 
 <header>
     <div class="container">
-        <h1 class="logo">
-            <a href="yandex.ru">Яндекс</a>
-        </h1>
-        <h2>
-            Школа Разработчиков Интерфейсов
-        </h2>
+        <div class="logo">
+            <a href="yandex.ru"><img src="img/ya_logo_inverted.svg" alt="Яндекс"></a>
+        </div>
+
+        <h2>Школа Разработчиков Интерфейсов</h2>
+        <nav class="navigation">
+            <ul>
+                <li class="active"><a href="#/about">О школе</a></li>
+                <li><a href="#/students">Студенты</a></li>
+                <li><a href="#/courses">Лекции</a></li>
+            </ul>
+        </nav>
     </div>
 </header>
 
-<nav class="navigation">
-    <ul>
-        <li class="active"><a href="/#about">О школе</a></li>
-        <li><a href="#/students">Студенты</a></li>
-        <li><a href="#/courses">Лекции</a></li>
-     </ul>
-</nav>
-
 
 <div class="jumbotron">
-    <h1>Школа Разработчиков Интерфейсов<br>Яндекс</h1>
+    <h1>Школа<br>Разработчиков<br>Интерфейсов<br>Яндекс</h1>
 </div>
 
-<div class="container">
-    <div ng-view></div>
-</div>
+<section class="students">
+    <div class="container">
+        <h1>Студенты</h1>
 
+        <div ng-controller="StudentsCtrl">
+            <input type="text" class="form-control" data-ng-model="nameFilter" placeholder="Поиск">
+            <ul class="app-folders-container">
+                <li class="person" ng-repeat="student in students | filter: nameFilter | orderBy: 'last_name'">
+                    <div class="profile-picture">
+                        <a href="#/students/{{student.id}}">
+                            <img ng-src="{{student.link_photo}}">
+                        </a>
+                    </div>
+                    <div class="student-name">
+                        <a href="#/students/{{student.id}}">{{student.first_name}}<br>{{student.last_name}}</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section class="students">
+    <div class="container">
+        <h1>Лекции</h1>
+
+        <div ng-controller="LectionsCtrl" ng-view="parts/lections.html"></div>
+    </div>
+</section>
 
 <!--<div style="width: 300px">Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos, qui ratione voluptatem sequi nesciunt, neque porro quisquam est, qui dolorem ipsum, quia dolor sit, amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt, ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit, qui in ea voluptate velit esse, quam nihil molestiae consequatur, vel illum, qui dolorem eum fugiat, quo voluptas nulla pariatur? At vero eos et accusamus et iusto odio dignissimos ducimus, qui blanditiis praesentium voluptatum deleniti atque corrupti, quos dolores et quas molestias excepturi sint, obcaecati cupiditate non provident, similique sunt in culpa, qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio, cumque nihil impedit, quo minus id, quod maxime placeat, facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet, ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.</div>-->
-
-
 
 
 </body>
