@@ -32,7 +32,7 @@ angular.module('shri', ['shri.services']);
 
 $(function () {
     //parallax scrolling
-    var bg = $(".jumbotron");
+    var bg = $(".parallax");
     $(window).scroll(function (e) {
         parallaxScroll(bg);
     });

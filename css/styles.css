@@ -1,6 +1,4 @@
 body {
-    /*padding: 30px;*/
-    /*padding-top: 70px;*/
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
 
@@ -87,20 +85,25 @@ ul {
 
 .jumbotron {
     background: url("../img/bg2.jpg") center -50px no-repeat;
+    background-attachment: fixed;
     /*background-color: #3498db;*/
     background-size: cover;
-    /*min-height: 300px;*/
-    /*opacity:0.4;*/
-    /*-webkit-filter: brightness(-5%);*/
+    min-height: 600px;
 }
 
 .jumbotron h1 {
-    /*padding-top: 150px;*/
+    padding-top: 150px;
+    font-size: 2em;
     color: white;
     font-family: 'PT Sans', sans-serif;
     font-weight: 700;
-    /*text-shadow: 1px 1px 2px black;*/
-    /*text-align: center;*/
+    text-shadow: 0px 0px 5px rgba(0,0,0,0.3);
+    text-align: center;
+}
+
+.jumbotron img
+{
+    height: 40px;
 }
 
 .navigation
@@ -116,7 +119,9 @@ ul {
 
 .navigation a
 {
-    /*font-size: 1.2em;*/
+    font-size: 1.2em;
+    font-family: 'PT Sans', sans-serif;
+    font-weight: 300;
     margin-left: 40px;
     margin-top: 20px;
     /*border-bottom: 1px dashed #428bca;*/
@@ -140,10 +145,11 @@ header {
     width: 100%;
     height: 60px;
     position: fixed;
-    /*z-index: 10;*/
-    /*border-bottom: 1px solid #cacaca;*/
-    /*box-shadow: 0 0px 40px rgba(0,0,0,0.6);*/
-    background-color: rgba(0,0,0,0.8);
+
+    background: url("../img/bg2_frost.jpg") center -50px no-repeat;
+    background-size: cover;
+    background-color: black;
+    background-attachment: fixed;
 }
 
 .logo img
@@ -151,14 +157,14 @@ header {
     height: 24px;
     margin-top: 5px;
 }
-header:before
+
+/*header:before
 {
-    /*z-index: 10;*/
+
     position: fixed;
 
     width: 100%;
     height: 60px;
-    /*background: url('../img/yandex_logo.png') top left no-repeat;*/
 
     -webkit-filter: blur(20px);
     -moz-filter: blur(20px);
@@ -167,7 +173,7 @@ header:before
     filter: blur(20px);
     opacity: 0.4;
 
-}
+}*/
 
 header .logo {
     float: left;
