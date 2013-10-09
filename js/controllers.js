@@ -1,17 +1,18 @@
 function StudentsCtrl($scope, Data) {
-    $scope.students = Data("students")
-};
-
-$scope.expand = function () {
-    //make my div bigger and add controls
+    $scope.students = Data('students');
+    $scope.expand = function () {
+        //make my div bigger and add controls
+    }
 };
 
 function StudentDetailsCtrl($scope, $routeParams) {
     $scope.studentID = $routeParams.studentID;
 };
 
-function CoursesCtrl($scope, $http) {
+function LecturesCtrl($scope, Data) {
+    $scope.lectures = Data('lectures');
 };
+
 function CourseDetailsCtrl($scope, $http) {
 };
 

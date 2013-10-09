@@ -1,15 +1,16 @@
-    angular.module('shri', ['shri.services'])
-        .config(['$routeProvider', function($routeProvider) {
-            $routeProvider.
-            when('/', {controller:StudentsCtrl, templateUrl:'list.html'}).
-            when('/edit/:studentID', {controller: EditStudentCtrl, templateUrl:'parts/editStudent.html'}).
+angular.module('shri', ['shri.services']);
 
-            when('/students', {templateUrl: 'parts/students.html', controller: StudentsCtrl}).
-            when('/students/:studentID', {templateUrl: 'parts/studentDetails.html', controller: StudentDetailsCtrl}).
-
-            when('/courses', {templateUrl: 'parts/courses.html', controller: CoursesCtrl}).
-            when('/courses/:courseID', {templateUrl: 'parts/courseDetails.html', controller: CourseDetailsCtrl}).
-            otherwise({redirectTo: '/'})}]);
+//        .config(['$routeProvider', function($routeProvider) {
+//            $routeProvider.
+//            when('/', {controller:StudentsCtrl, templateUrl:'list.html'}).
+//            when('/edit/:studentID', {controller: EditStudentCtrl, templateUrl:'parts/editStudent.html'}).
+//
+//            when('/students', {templateUrl: 'parts/students.html', controller: StudentsCtrl}).
+//            when('/students/:studentID', {templateUrl: 'parts/studentDetails.html', controller: StudentDetailsCtrl}).
+//
+//            when('/courses', {templateUrl: 'parts/courses.html', controller: CoursesCtrl}).
+//            when('/courses/:courseID', {templateUrl: 'parts/courseDetails.html', controller: CourseDetailsCtrl}).
+//            otherwise({redirectTo: '/'})}]);
 
 
 

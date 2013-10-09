@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ru" ng-app>
+<html lang="ru" ng-app="shri">
 <head>
     <meta charset="UTF-8">
     <title>Яндекс.ШРИ в Москве 2013</title>
@@ -10,6 +10,7 @@
     <script src="assets/js/jquery-2.0.3.min.js"></script>
     <script src="assets/js/jquery.isotope.min.js"></script>
     <script src="assets/js/angular.min.js"></script>
+    <script src="assets/js/angular-resource.min.js"></script>
     <script src="js/app.js"></script>
     <script src="js/services.js"></script>
     <script src="js/controllers.js"></script>
@@ -71,6 +72,14 @@
 <section class="students">
     <div class="container">
         <h1>Лекции</h1>
+
+        <div id="lectures-list" ng-controller="LecturesCtrl">
+            <div class="person" ng-repeat="lecture in lectures">
+                <div class="lecture">
+                    {{lecture.name}}
+                </div>
+            </div>
+        </div>
 
         <!--<div ng-controller="LectionsCtrl" ng-view="parts/lections.html"></div>-->
     </div>
