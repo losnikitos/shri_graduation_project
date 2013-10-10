@@ -1,4 +1,5 @@
 var module = angular.module('shri.services', ['ngResource']);
+
 module.factory('Data', function ($resource) {
     var loader = $resource('data/:name.json');
     var loadList = ['students', 'lectures'];
