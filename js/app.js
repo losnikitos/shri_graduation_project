@@ -1,4 +1,4 @@
-var module = angular.module('shri', ['shri.services', 'ui.bootstrap']);
+var module = angular.module('shri', ['shri.services', 'ui.bootstrap', 'ui.router']);
 module.directive('student_compact', function () {
     return {
         templateUrl: 'parts/student_compact.html'
@@ -11,8 +11,11 @@ module.directive('student_expanded', function () {
     }
 });
 
-
-
+module.config(function($stateProvider){
+    $stateProvider.state('students', {
+        templateUrl: 'parts/students_list.html'
+    });
+})
 
 
 

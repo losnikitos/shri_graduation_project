@@ -12,6 +12,13 @@ body {
     font-style: normal;
 }
 
+@font-face
+{
+    font-family: 'PT Sans';
+    src: url(sansation_bold.woff);
+    font-weight:bold;
+}
+
 /* Кружочек */
 .person .profile-picture {
     width: 100px;
