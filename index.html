@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>Yandex.SHRI</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/app.css">    
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     
@@ -14,7 +14,7 @@
             <div class="navbar-inner">
                 <div class="container">
                     <div class="pull-right label">Current route: <span ng-bind="$routeSegment.name"></span></div>
-                    <a class="brand" href="http://angular-route-segment.com">Яндекс ШРИ</a>
+                    <a class="brand" href="http://yandex.ru">Яндекс ШРИ</a>
                     <ul class="nav">
                         <li><a href="#about">О школе</a></li>
                         <li><a href="#students">Студенты</a></li>
@@ -27,6 +27,8 @@
         <div class="container" id="content">
             <div class="row anim" app-view-segment="0"></div>
         </div>
+
+        <div class="span9 anim" app-view-segment="1" ng-show="$routeSegment.$routeParams.id != null"></div>
 
         <div id=loading class=alert ng-show="loader.show">Loading...</div>
     

@@ -61,41 +61,46 @@ body {
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     font-family: 'PT Sans';
+}
 
+li
+{
+    display: block;
 }
 
 
 /* Кружочек */
-.person .profile-picture {
+.student-small .profile-picture{
     width: 100px;
     height: 100px;
     border-radius: 500px;
     overflow: hidden;
     background-color: #bdc3c7;
-    /*display: inline-block;*/
-    /*position: absolute;*/
+
 }
+
+
 
 ul {
-    /*display: flex;*/
-    /*flex-flow: row wrap;*/
+    list-style: none;
 }
 
-.person {
+.student-small {
     border: 1px dashed red;
     width: 150px;
     height: 150px;
     margin: 5px;
-    /*display: inline-block;*/
+    display: inline-block;
 }
 
-.person .profile-picture {
+.student-small .profile-picture {
     margin-left: auto;
     margin-right: auto;
     margin-top: 5px;
 }
 
-.person .profile-picture:before {
+.student-small .profile-picture:before {
+    display: none;
     font-family: 'Web Symbols';
     content: 'user';
     color: white;
@@ -107,33 +112,11 @@ ul {
     /*float: left;*/
 }
 
-/*Избавляемся от подчеркивания*/
-.person .profile-picture a {
-    /*text-decoration: none;*/
-    /*color: black;*/
+.student-small .name
+{
     text-align: center;
 }
 
-.person .profile-picture img {
-    display: none;
-    /*position: absolute;*/
-    /*float: left;*/
-    /*display: block;*/
-    /*left: 0;*/
-    /*right:0;*/
-    /*position: absolute;*/
-    /*width: 200px;*/
-    /*height: 200px;*/
-    /*z-index: 999;*/
-
-}
-
-.name {
-    /*display: inline-block;*/
-    /*font-size: 1em;*/
-    /*font-weight: 300;*/
-    text-align: center;
-}
 
 .jumbotron {
     background: url("../img/bg2.jpg") center -50px no-repeat;
@@ -247,6 +230,9 @@ header h2 {
 }
 
 .student {
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
     padding: 30px;
     border: 1px solid #7f8c8d;
     min-height: 460px;
@@ -260,7 +246,7 @@ header h2 {
     font-family: 'PT Sans Narrow', sans-serif;
     color: #e74c3c;
     font-weight: 300;
-    font-size: 3em;
+    font-size: 1em;
 }
 
 .student .profile-picture {

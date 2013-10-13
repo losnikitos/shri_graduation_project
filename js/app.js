@@ -1,7 +1,7 @@
 var app = angular.module('app', ['ngRoute', 'ngAnimate', 'route-segment', 'view-segment', 'ngResource'],function(){});
 
 app.config(function($routeSegmentProvider, $routeProvider) {
-    
+
     $routeSegmentProvider.options.autoLoadTemplates = true;
 
     $routeSegmentProvider
@@ -12,8 +12,13 @@ app.config(function($routeSegmentProvider, $routeProvider) {
 
         .segment('students', {
             templateUrl: 'parts/studentsList.html',
-            controller: MainCtrl})
-            
+            controller: StudentsCtrl,
+            resolve: {
+                data: function($timeout, loader,Data) {
+                    console.log('resolved! '+ Data('students')[2]);
+
+                }}})
+
         .within()
             .segment('details', {
                 templateUrl: 'parts/studentExpanded.html',
@@ -24,7 +29,7 @@ app.config(function($routeSegmentProvider, $routeProvider) {
         .segment('lectures', {
             templateUrl: 'parts/lecture.html',
             controller: MainCtrl})
-            
+
         .within()
         .segment('details', {
             templateUrl: 'parts/lectureExpanded.html',
@@ -32,17 +37,16 @@ app.config(function($routeSegmentProvider, $routeProvider) {
             dependencies: ['id']})
         .up();
 
-    // This is some usage of `resolve`, `untilResolved` and `resolveFailed` features
-                    
+
     $routeSegmentProvider
-    
+
         .when('/invalid-template', 's1.invalidTemplate')
         .when('/invalid-data', 's1.invalidData')
         .when('/slow-data', 's1.slowDataSimple')
         .when('/slow-data-loading', 's1.slowDataLoading')
         .when('/inline-view', 's1.inlineParent.inlineChildren')
         .when('/students/:id/slow',    's1.itemInfo.tabSlow')
-        
+
         .within('s1')
             .segment('invalidTemplate', {
                 templateUrl: 'this-does-not-exist.html',    // 404
@@ -117,9 +121,9 @@ app.config(function($routeSegmentProvider, $routeProvider) {
                     }
                 })
 
-                
-        
-        
+
+
+
     $routeProvider.otherwise({redirectTo: '/students'});
 }) ;
 
@@ -132,10 +136,34 @@ function MainCtrl($scope, $routeSegment, loader) {
 }
 
 function StudentsCtrl($scope, $routeSegment, Data) {
-    
-    //$scope.$routeSegment = $routeSegment;
-    $scope.students = Data('students');
+//    $scope.students = Data('students');
+//    console.log('studstrl'+$scope.students[3]);
+
+    var students = Data('students');
+
+    var numColumns = 5;
+    var rowsCount = Math.ceil(students.length / numColumns);
+
+    var rows = [];
+    for(var i=0; i<rowsCount; i++)
+    {
+        rows[i] = [];
+        for(var j=0; j<numColumns; j++)
+        {
+            var s = students[i*numColumns+j];
+            if(s) rows[i][j] = s;
+        }
+    }
+    $scope.rows = rows;
 }
+
+
+StudentsCtrl.resolve={
+    students: function($routeParams, students){
+        console.log('reloved!');
+    }
+}
+
 
 function StudentDetailsCtrl($scope, $routeSegment, Data) {
 
