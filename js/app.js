@@ -199,3 +199,7 @@ app.factory('Data', function ($resource)
     return function (key) {
         return data[key];
     }});
+
+$(function() {
+    $('.folders').appFolders();
+});
