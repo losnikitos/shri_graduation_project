@@ -1,14 +1,8 @@
-angular.module('shri.components', []).
-    directive('student', function() {
+angular.module('shri.components', [])
+    .directive('person', function () {
         return {
             restrict: 'E',
-//            scope: {student: '@'},
-//            transclude: false,
-//              require: '^students',
-//            link: function(scope, element, attrs, studentsCtrl) {
-//                studentsCtrl.select(scope);
-//            },
-            templateUrl: 'parts/studentCompact.html',
+            templateUrl: 'parts/personCompact.html',
             replace: true
         };
     });

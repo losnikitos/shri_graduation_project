@@ -1,5 +1,4 @@
-var app = angular.module('app', ['ngRoute', 'ngAnimate', 'route-segment', 'view-segment', 'ngResource', 'shri.components'], function () {
-});
+var app = angular.module('app', ['ngRoute', 'ngAnimate', 'route-segment', 'view-segment', 'ngResource', 'shri.components', '$strap.directives'], function () {});
 
 app.config(function ($routeSegmentProvider, $routeProvider) {
 
@@ -71,9 +70,11 @@ function StudentsCtrl($scope, $routeSegment, Data) {
 
 
 function StudentDetailsCtrl($scope, $routeSegment, Data) {
-    $scope.student = Data('students')[$routeSegment.$routeParams.id - 1];
-    $scope.collapse = function () {
-    };
+//    $scope.person = Data('students')[$scope.id];
+   // console.log($scope.person.first_name);
+//    $scope.popover={};
+
+
 }
 
 function Section2Ctrl($scope, $routeSegment) {
@@ -116,9 +117,4 @@ app.directive('myDirective', function () {
             };
         }
     };
-});
-
-
-$(function() {
-    $('.app-folders-container').appFolders();
 });

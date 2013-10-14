@@ -1,10 +1,7 @@
 @font-face {
     font-family: 'Web Symbols';
     src: url('../assets/fonts/websymbolsligaregular.eot');
-    src: url('../assets/fonts/websymbolsligaregular.eot?#iefix') format('embedded-opentype'),
-        url('../assets/fonts/websymbolsligaregular.woff') format('woff'),
-        url('../assets/fonts/websymbolsligaregular.ttf') format('truetype'),
-        url('../assets/fonts/websymbolsligaregular.svg#websymbols') format('svg');
+    src: url('../assets/fonts/websymbolsligaregular.eot?#iefix') format('embedded-opentype'), url('../assets/fonts/websymbolsligaregular.woff') format('woff'), url('../assets/fonts/websymbolsligaregular.ttf') format('truetype'), url('../assets/fonts/websymbolsligaregular.svg#websymbols') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -12,10 +9,7 @@
 @font-face {
     font-family: 'PT Sans';
     src: url('../assets/fonts/PTS75F-webfont.eot');
-    src: url('../assets/fonts/PTS75F-webfont.eot?#iefix') format('embedded-opentype'),
-    url('../assets/fonts/PTS75F-webfont.woff') format('woff'),
-    url('../assets/fonts/PTS75F-webfont.ttf') format('truetype'),
-    url('../assets/fonts/PTS75F-webfont.svg#pt_sansbold') format('svg');
+    src: url('../assets/fonts/PTS75F-webfont.eot?#iefix') format('embedded-opentype'), url('../assets/fonts/PTS75F-webfont.woff') format('woff'), url('../assets/fonts/PTS75F-webfont.ttf') format('truetype'), url('../assets/fonts/PTS75F-webfont.svg#pt_sansbold') format('svg');
     font-weight: 700;
     font-style: normal;
 
@@ -24,10 +18,7 @@
 @font-face {
     font-family: 'PT Sans';
     src: url('../assets/fonts/PTS55F-webfont.eot');
-    src: url('../assets/fonts/PTS55F-webfont.eot?#iefix') format('embedded-opentype'),
-    url('../assets/fonts/PTS55F-webfont.woff') format('woff'),
-    url('../assets/fonts/PTS55F-webfont.ttf') format('truetype'),
-    url('../assets/fonts/PTS55F-webfont.svg#pt_sansregular') format('svg');
+    src: url('../assets/fonts/PTS55F-webfont.eot?#iefix') format('embedded-opentype'), url('../assets/fonts/PTS55F-webfont.woff') format('woff'), url('../assets/fonts/PTS55F-webfont.ttf') format('truetype'), url('../assets/fonts/PTS55F-webfont.svg#pt_sansregular') format('svg');
     font-weight: 300;
     font-style: normal;
 
@@ -36,10 +27,7 @@
 @font-face {
     font-family: 'PT Sans Narrow';
     src: url('../assets/fonts/PTN77F-webfont.eot');
-    src: url('../assets/fonts/PTN77F-webfont.eot?#iefix') format('embedded-opentype'),
-    url('../assets/fonts/PTN77F-webfont.woff') format('woff'),
-    url('../assets/fonts/PTN77F-webfont.ttf') format('truetype'),
-    url('../assets/fonts/PTN77F-webfont.svg#pt_sans_narrowbold') format('svg');
+    src: url('../assets/fonts/PTN77F-webfont.eot?#iefix') format('embedded-opentype'), url('../assets/fonts/PTN77F-webfont.woff') format('woff'), url('../assets/fonts/PTN77F-webfont.ttf') format('truetype'), url('../assets/fonts/PTN77F-webfont.svg#pt_sans_narrowbold') format('svg');
     font-weight: 300;
     font-style: normal;
 
@@ -48,10 +36,7 @@
 @font-face {
     font-family: 'PT Sans Narrow';
     src: url('../assets/fonts/PTN57F-webfont.eot');
-    src: url('../assets/fonts/PTN57F-webfont.eot?#iefix') format('embedded-opentype'),
-    url('../assets/fonts/PTN57F-webfont.woff') format('woff'),
-    url('../assets/fonts/PTN57F-webfont.ttf') format('truetype'),
-    url('../assets/fonts/PTN57F-webfont.svg#pt_sans_narrowregular') format('svg');
+    src: url('../assets/fonts/PTN57F-webfont.eot?#iefix') format('embedded-opentype'), url('../assets/fonts/PTN57F-webfont.woff') format('woff'), url('../assets/fonts/PTN57F-webfont.ttf') format('truetype'), url('../assets/fonts/PTN57F-webfont.svg#pt_sans_narrowregular') format('svg');
     font-weight: 700;
     font-style: normal;
 
@@ -62,26 +47,27 @@ body {
     -webkit-font-smoothing: antialiased;
     font-family: 'PT Sans';
 }
-h1
-{
+
+h1 {
     text-align: center;
+    margin-top: 50px;
 }
-li
-{
+
+li {
     display: block;
 }
 
-.row
-{
+.row {
     text-align: center;
     border: 1px dashed lawngreen;
 }
-.col
-{
-    display:inline-block;
+
+.col {
+    display: inline-block;
 }
+
 /* Кружочек */
-.student-small .profile-picture{
+.student-small .profile-picture {
     width: 100px;
     height: 100px;
     border-radius: 500px;
@@ -121,29 +107,27 @@ ul {
     /*float: left;*/
 }
 
-.student-small .name
-{
+.student-small .name {
     text-align: center;
 }
 
-
-.jumbotron {
-    background: url("../img/bg2.jpg") center -50px no-repeat;
-    background-attachment: fixed;
+/*.jumbotron {*/
+    /*background: url("../img/bg2.jpg") center -50px no-repeat;*/
+    /*background-attachment: fixed;*/
     /*background-color: #3498db;*/
-    background-size: cover;
-    min-height: 600px;
-}
+    /*background-size: cover;*/
+    /*min-height: 600px;*/
+/*}*/
 
-.jumbotron h1 {
-    padding-top: 50px;
-    font-size: 2em;
-    color: white;
-    font-family: 'PT Sans', sans-serif;
-    font-weight: 300;
-    text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
-    text-align: center;
-}
+/*.jumbotron h1 {*/
+    /*padding-top: 50px;*/
+    /*font-size: 2em;*/
+    /*color: white;*/
+    /*font-family: 'PT Sans', sans-serif;*/
+    /*font-weight: 300;*/
+    /*text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);*/
+    /*text-align: center;*/
+/*}*/
 
 .jumbotron img {
     height: 40px;
@@ -179,14 +163,14 @@ ul {
 }
 
 header {
-    width: 100%;
-    height: 60px;
-    position: fixed;
+    /*width: 100%;*/
+    /*height: 60px;*/
+    /*position: fixed;*/
 
-    background: url("../img/bg2_frost.jpg") center -50px no-repeat;
-    background-size: cover;
-    background-color: black;
-    background-attachment: fixed;
+    /*background: url("../img/bg2_frost.jpg") center -50px no-repeat;*/
+    /*background-size: cover;*/
+    /*background-color: black;*/
+    /*background-attachment: fixed;*/
 }
 
 .logo img {
@@ -280,4 +264,26 @@ header h2 {
 .links a:hover {
     text-decoration: none;
     color: #e74c3c;
+}
+
+.jumbotron {
+    overflow: hidden;
+    position: relative;
+    padding: 60px 0 40px;
+    color: #fff;
+    text-align: center;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4), 0 0 30px rgba(0, 0, 0, 0.075);
+    background: #f7f7f7 url("../img/background.jpg");
+    background-size: cover;
+    background-position: 50% -200px;
+    -webkit-box-shadow: inset 0 3px 7px rgba(0, 0, 0, 0.2), inset 0 -3px 7px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: inset 0 3px 7px rgba(0, 0, 0, 0.2), inset 0 -3px 7px rgba(0, 0, 0, 0.2);
+    box-shadow: inset 0 3px 7px rgba(0, 0, 0, 0.2), inset 0 -3px 7px rgba(0, 0, 0, 0.2);
+}
+
+.jumbotron h1 {
+    font-size: 80px;
+    font-weight: bold;
+    letter-spacing: -5px;
+    line-height: 1;
 }
