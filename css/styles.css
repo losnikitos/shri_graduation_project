@@ -1,4 +1,4 @@
-font-face {
+@font-face {
     font-family: 'Web Symbols';
     src: url('../assets/fonts/websymbolsligaregular.eot');
     src: url('../assets/fonts/websymbolsligaregular.eot?#iefix') format('embedded-opentype'),
@@ -62,13 +62,24 @@ body {
     -webkit-font-smoothing: antialiased;
     font-family: 'PT Sans';
 }
-
+h1
+{
+    text-align: center;
+}
 li
 {
     display: block;
 }
 
-
+.row
+{
+    text-align: center;
+    border: 1px dashed lawngreen;
+}
+.col
+{
+    display:inline-block;
+}
 /* Кружочек */
 .student-small .profile-picture{
     width: 100px;
@@ -78,8 +89,6 @@ li
     background-color: #bdc3c7;
 
 }
-
-
 
 ul {
     list-style: none;

@@ -1,30 +1,31 @@
-var app = angular.module('app', ['ngRoute', 'ngAnimate', 'route-segment', 'view-segment', 'ngResource'],function(){});
+var app = angular.module('app', ['ngRoute', 'ngAnimate', 'route-segment', 'view-segment', 'ngResource', 'shri.components'], function () {
+});
 
-app.config(function($routeSegmentProvider, $routeProvider) {
+app.config(function ($routeSegmentProvider, $routeProvider) {
 
     $routeSegmentProvider.options.autoLoadTemplates = true;
 
     $routeSegmentProvider
-        .when('/students',          'students')
-        .when('/students/:id',      'students.details')
-        .when('/lectures',          'lectures')
-        .when('/lectures/:id',      'lectures.details')
+        .when('/students', 'students')
+        .when('/students/:id', 'students.details')
+        .when('/lectures', 'lectures')
+        .when('/lectures/:id', 'lecture.details')
 
         .segment('students', {
             templateUrl: 'parts/studentsList.html',
             controller: StudentsCtrl,
             resolve: {
-                data: function($timeout, loader,Data) {
-                    console.log('resolved! '+ Data('students')[2]);
 
+                data: function ($timeout, loader, Data) {
+                    Data('students');
                 }}})
 
         .within()
-            .segment('details', {
-                templateUrl: 'parts/studentExpanded.html',
-                controller: StudentDetailsCtrl,
-                dependencies: ['id']})
-            .up()
+        .segment('details', {
+            templateUrl: 'parts/studentExpanded.html',
+            controller: StudentDetailsCtrl,
+            dependencies: ['id']})
+        .up()
 
         .segment('lectures', {
             templateUrl: 'parts/lecture.html',
@@ -32,111 +33,23 @@ app.config(function($routeSegmentProvider, $routeProvider) {
 
         .within()
         .segment('details', {
-            templateUrl: 'parts/lectureExpanded.html',
-//            controller: LectureDetailsCtrl,
-            dependencies: ['id']})
+            templateUrl: 'parts/lectureExpanded.html'})
         .up();
 
-
-    $routeSegmentProvider
-
-        .when('/invalid-template', 's1.invalidTemplate')
-        .when('/invalid-data', 's1.invalidData')
-        .when('/slow-data', 's1.slowDataSimple')
-        .when('/slow-data-loading', 's1.slowDataLoading')
-        .when('/inline-view', 's1.inlineParent.inlineChildren')
-        .when('/students/:id/slow',    's1.itemInfo.tabSlow')
-
-        .within('s1')
-            .segment('invalidTemplate', {
-                templateUrl: 'this-does-not-exist.html',    // 404
-                resolveFailed: {
-                    templateUrl: 'templates/error.html',
-                    controller: 'ErrorCtrl'
-                }
-            })
-            .segment('invalidData', {
-                templateUrl: 'templates/section1/home.html',     // Correct!
-                resolve: {
-                    data: function($q) {
-                        return $q.reject('ERROR DESCRIPTION');     // Failed to load data
-                    }
-                },
-                resolveFailed: {
-                    templateUrl: 'templates/error.html',
-                    controller: 'ErrorCtrl'
-                }
-            })
-            .segment('slowDataSimple', {
-                templateUrl: 'templates/section1/slow-data.html',
-                controller: 'SlowDataCtrl',
-                resolve: {
-                    data: function($timeout, loader) {
-                        loader.show = true;
-                        return $timeout(function() { return 'SLOW DATA CONTENT'; }, 2000);
-                    }
-                }
-            })
-            .segment('slowDataLoading', {
-                templateUrl: 'templates/section1/slow-data.html',
-                controller: 'SlowDataCtrl',
-                resolve: {
-                    data: function($timeout) {
-                        return $timeout(function() { return 'SLOW DATA CONTENT'; }, 2000);
-                    }
-                },
-                untilResolved: {
-                    templateUrl: 'templates/loading.html'
-                }
-            })
-            .segment('inlineParent', {
-                templateUrl: 'templates/section1/inline-view.html'
-            })
-            .within()
-                .segment('inlineChildren', {
-                    // no template here
-                    controller: 'SlowDataCtrl',
-                    resolve: {
-                        data: function($timeout) {
-                            return $timeout(function() { return 'SLOW DATA CONTENT'; }, 2000);
-                        }
-                    },
-                    untilResolved: {
-                        templateUrl: 'templates/loading.html'
-                    }
-                })
-                .up()
-
-            .within('itemInfo')
-                .segment('tabSlow', {
-                    templateUrl: 'templates/section1/slow-data.html',
-                    controller: 'SlowDataCtrl',
-                    resolve: {
-                        data: function($timeout) {
-                            return $timeout(function() { return 'SLOW DATA CONTENT'; }, 2000);
-                        }
-                    },
-                    untilResolved: {
-                        templateUrl: 'templates/loading.html'
-                    }
-                })
-
-
-
-
-    $routeProvider.otherwise({redirectTo: '/students'});
-}) ;
+        $routeProvider.otherwise({redirectTo: '/students'});
+});
 
 app.value('loader', {show: false});
 
-function MainCtrl($scope, $routeSegment, loader) {
+function MainCtrl($scope, $routeSegment, loader, Data) {
 
     $scope.$routeSegment = $routeSegment;
     $scope.loader = loader;
+    $scope.students = Data('students');
 }
 
 function StudentsCtrl($scope, $routeSegment, Data) {
-//    $scope.students = Data('students');
+    $scope.students = Data('students');
 //    console.log('studstrl'+$scope.students[3]);
 
     var students = Data('students');
@@ -145,38 +58,29 @@ function StudentsCtrl($scope, $routeSegment, Data) {
     var rowsCount = Math.ceil(students.length / numColumns);
 
     var rows = [];
-    for(var i=0; i<rowsCount; i++)
-    {
+    for (var i = 0; i < rowsCount; i++) {
         rows[i] = [];
-        for(var j=0; j<numColumns; j++)
-        {
-            var s = students[i*numColumns+j];
-            if(s) rows[i][j] = s;
+        for (var j = 0; j < numColumns; j++) {
+            var s = students[i * numColumns + j];
+            if (s) rows[i][j] = s;
         }
     }
     $scope.rows = rows;
-}
 
-
-StudentsCtrl.resolve={
-    students: function($routeParams, students){
-        console.log('reloved!');
-    }
 }
 
 
 function StudentDetailsCtrl($scope, $routeSegment, Data) {
-
-//    $scope.$routeSegment = $routeSegment;
-    $scope.student = Data('students')[$routeSegment.$routeParams.id-1];
-    $scope.collapse = function() {};
+    $scope.student = Data('students')[$routeSegment.$routeParams.id - 1];
+    $scope.collapse = function () {
+    };
 }
 
 function Section2Ctrl($scope, $routeSegment) {
 
     $scope.$routeSegment = $routeSegment;
     $scope.test = { textValue: '' };
-    $scope.items = [ 1,2,3,4,5,6,7,8,9 ];
+    $scope.items = [ 1, 2, 3, 4, 5, 6, 7, 8, 9 ];
 }
 
 function ErrorCtrl($scope, error) {
@@ -188,8 +92,7 @@ function SlowDataCtrl($scope, data, loader) {
     $scope.data = data;
 }
 
-app.factory('Data', function ($resource)
-{
+app.factory('Data', function ($resource) {
     var loader = $resource('data/:name.json');
     var loadList = ['students', 'lectures'];
     var data = {};
@@ -198,8 +101,24 @@ app.factory('Data', function ($resource)
 
     return function (key) {
         return data[key];
-    }});
+    }
+});
+
+app.directive('myDirective', function () {
+    return {
+        scope: true,
+        template: '<a class="btn" ng-class="{active: on}" ng-click="toggle()">Toggle me!</a>',
+        link: function (scope, element, attrs) {
+            scope.on = false;
+
+            scope.toggle = function () {
+                scope.on = !$scope.on;
+            };
+        }
+    };
+});
+
 
 $(function() {
-    $('.folders').appFolders();
+    $('.app-folders-container').appFolders();
 });
