@@ -1,14 +1,13 @@
 <div class="student-small">
-    <!--<a ng-href="#/students/{{person.id}}"></a>-->
-    <!--<img class="profile-picture" ng-src="{{person.link_photo}}">-->
+    <a ng-href="#/students/{{person.id}}"
+       data-unique="1" bs-popover="'parts/studentExpanded.html'"
+       ng-controller="StudentDetailsCtrl">
 
-    <!--<div class="name"></div>-->
-    <!--<pre>{{person | json}}</pre>-->
-
-    <button type="button"
-            class="btn btn-primary"
-            data-unique="1" bs-popover="'parts/studentExpanded.html'"
-            ng-controller="StudentDetailsCtrl">{{person.first_name}}<br>{{person.last_name}}
-    </button>
-
+        <img class="profile-picture" ng-src="{{person.link_photo}}">
+        <div class="name">
+            {{person.first_name}}
+            <br>
+            {{person.last_name}}
+        </div>
+    </a>
 </div>
