@@ -1,30 +1,21 @@
+<div class="student">
+    <h2 class="name">{{person.first_name}} {{person.last_name}}</h2>
 
+    <div class="profile-picture-big">
+        <img ng-src="{{person.link_photo}}">
+    </div>
 
-<h1>SOME BULLSHIT</h1>
+    <!--<button class="btn" ng-click="">collapse</button>-->
+    <div class="about">{{person.about}}</div>
+    <div class="links">
+        <a ng-href="{{person.link_vk}}">vkontakte</a>
+        <a ng-href="{{person.link_facebook}}">facebook</a>
+        <a ng-href="{{person.link_github}}">github</a>
+        <a ng-href="{{person.link_yaru}}">heart</a>
+    </div>
 
-<!--<div class="student">-->
-<!--<h1 class="name">{{student.first_name}} {{student.last_name}}</h1>-->
-<!--<div class="profile-picture-big">-->
-<!--<img ng-src="{{student.link_photo}}">-->
-<!--</div>-->
-
-<!--<button class="btn" ng-click="">collapse</button>-->
-
-<!--<div class="about">{{student.about}}</div>-->
-
-<!--<div class="links">-->
-<!--<a ng-href="{{student.link_vk}}">vkontakte</a>-->
-<!--<a ng-href="{{student.link_facebook}}">facebook</a>-->
-<!--<a ng-href="{{student.link_github}}">github</a>-->
-<!--<a ng-href="{{student.link_yaru}}">heart</a>-->
-<!--</div>-->
-
-<!--<div><a href="#">Закрыть</a></div>-->
-<!--</div>-->
-
-
-
-
+    <div><a href="#">Закрыть</a></div>
+</div>
 
 
 <!-- ФОРМА -->

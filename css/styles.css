@@ -45,7 +45,7 @@
 body {
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
-    font-family: 'PT Sans';
+    /*font-family: 'PT Sans';*/
 }
 
 h1 {
@@ -68,8 +68,8 @@ li {
 
 /* Кружочек */
 .student-small .profile-picture {
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
     border-radius: 500px;
     overflow: hidden;
     background-color: #bdc3c7;
@@ -81,7 +81,7 @@ ul {
 }
 
 .student-small {
-    border: 1px dashed red;
+    /*border: 1px dashed red;*/
     width: 150px;
     height: 150px;
     margin: 5px;
@@ -169,8 +169,14 @@ header {
 
     /*background: url("../img/bg2_frost.jpg") center -50px no-repeat;*/
     /*background-size: cover;*/
-    /*background-color: black;*/
+    /*background-color: rgba(0,0,0,.2);*/
     /*background-attachment: fixed;*/
+}
+
+.navbar-inverse .navbar-inner
+{
+    background-color: rgba(0,0,0,.2);
+
 }
 
 .logo img {
@@ -223,23 +229,26 @@ header h2 {
 }
 
 .student {
-    width: 200px;
-    height: 200px;
+    /*width: 200px;*/
+    /*height: 200px;*/
     overflow: hidden;
-    padding: 30px;
-    border: 1px solid #7f8c8d;
+    /*padding: 30px;*/
+    /*border: 1px solid #7f8c8d;*/
     min-height: 460px;
     font-family: 'PT Sans', sans-serif;
     font-weight: 300;
     font-size: 1.2em;
 }
 
+.popover {
+    max-width: 960px !important;
+}
 .student .name {
-    text-align: left;
-    font-family: 'PT Sans Narrow', sans-serif;
-    color: #e74c3c;
+    /*text-align: left;*/
+    /*font-family: 'PT Sans Narrow', sans-serif;*/
+    /*color: #e74c3c;*/
     font-weight: 300;
-    font-size: 1em;
+    /*font-size: 2em;*/
 }
 
 .student .profile-picture {
@@ -269,7 +278,7 @@ header h2 {
 .jumbotron {
     overflow: hidden;
     position: relative;
-    padding: 60px 0 40px;
+    padding: 100px 0 80px;
     color: #fff;
     text-align: center;
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4), 0 0 30px rgba(0, 0, 0, 0.075);
@@ -286,4 +295,10 @@ header h2 {
     font-weight: bold;
     letter-spacing: -5px;
     line-height: 1;
+}
+
+.student-small a{
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
 }

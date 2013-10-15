@@ -70,27 +70,16 @@ function StudentsCtrl($scope, $routeSegment, Data) {
 
 
 function StudentDetailsCtrl($scope, $routeSegment, Data) {
+
 //    $scope.person = Data('students')[$scope.id];
-   // console.log($scope.person.first_name);
-//    $scope.popover={};
+
+//    $scope.person = {
+//        id: 1,
+//        first_name: "John",
+//        last_name: "Doe"
+//    };
 
 
-}
-
-function Section2Ctrl($scope, $routeSegment) {
-
-    $scope.$routeSegment = $routeSegment;
-    $scope.test = { textValue: '' };
-    $scope.items = [ 1, 2, 3, 4, 5, 6, 7, 8, 9 ];
-}
-
-function ErrorCtrl($scope, error) {
-    $scope.error = error;
-}
-
-function SlowDataCtrl($scope, data, loader) {
-    loader.show = false;
-    $scope.data = data;
 }
 
 app.factory('Data', function ($resource) {
