@@ -1,0 +1,31 @@
+<div class="student">
+    <h2 class="name">{{person.first_name}} {{person.last_name}}</h2>
+
+    <div class="profile-picture-big">
+        <img ng-src="{{person.link_photo}}">
+    </div>
+
+    <!--<button class="btn" ng-click="">collapse</button>-->
+    <div class="about">{{person.about}}</div>
+    <div class="links">
+        <a ng-href="{{person.link_vk}}">vkontakte</a>
+        <a ng-href="{{person.link_facebook}}">facebook</a>
+        <a ng-href="{{person.link_github}}">github</a>
+        <a ng-href="{{person.link_yaru}}">heart</a>
+    </div>
+
+    <div><a href="#">Закрыть</a></div>
+</div>
+
+
+<!-- ФОРМА -->
+<!--<form name="popoverForm">-->
+<!--<p ng-bind-html-unsafe="popover.content"></p>-->
+<!--<br />-->
+<!--<pre>2 + 3 = {{ 2 + 3 }}</pre>-->
+<!--<div class="form-actions">-->
+<!--<button type="button" class="btn" ng-click="submitForm($popover)">Close</button>-->
+<!--<button class="btn btn-primary" ng-click="popover.saved=true;hide()">Save changes</button>-->
+<!--</div>-->
+<!--</form>-->
+<!---->

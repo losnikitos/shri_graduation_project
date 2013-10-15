@@ -1,0 +1,138 @@
+[
+    {
+        "id": 35,
+        "lector_id": 188,
+        "native_id": 1293,
+        "video_url": "http://video.yandex.ru/iframe/ya-events/nvby8zm0d8.3121/?player-type=custom\u0026show-info=false\u0026show-logo=false\u0026hd=1",
+        "slides_url": "http://www.slideshare.net/slideshow/embed_code/26263503",
+        "name": "Изучение и редактирование кода "
+    },
+    {
+        "id": 36,
+        "lector_id": 191,
+        "native_id": 1327,
+        "video_url": "http://video.yandex.ru/iframe/ya-events/gmhj6jhjbq.7339/?player-type=custom\u0026show-info=false\u0026show-logo=false\u0026hd=1",
+        "slides_url": "http://www.slideshare.net/slideshow/embed_code/26497344",
+        "name": "Развертывание верстки"
+    },
+    {
+        "id": 37,
+        "lector_id": 181,
+        "native_id": 1328,
+        "video_url": "http://video.yandex.ru/iframe/ya-events/w2b30qpu64.4923/?player-type=custom\u0026show-info=false\u0026show-logo=false\u0026hd=1",
+        "slides_url": "http://www.slideshare.net/slideshow/embed_code/26497696",
+        "name": "http-протокол"
+    },
+    {
+        "id": 38,
+        "lector_id": 184,
+        "native_id": 1329,
+        "video_url": "http://video.yandex.ru/iframe/ya-events/sg6f9vxh4h.7140/?player-type=custom\u0026show-info=false\u0026show-logo=false\u0026hd=1",
+        "slides_url": null,
+        "name": "Механизм работы браузера "
+    },
+    {
+        "id": 39,
+        "lector_id": 187,
+        "native_id": 1330,
+        "video_url": "http://video.yandex.ru/iframe/ya-events/0tk8ubi12b.7216/?player-type=custom\u0026show-info=false\u0026show-logo=false\u0026hd=1",
+        "slides_url": "http://www.slideshare.net/slideshow/embed_code/26501207",
+        "name": "Кеширование на клиенте и сервере"
+    },
+    {
+        "id": 40,
+        "lector_id": 194,
+        "native_id": 1337,
+        "video_url": "http://video.yandex.ru/iframe/ya-events/4fcm2v836x.2020/?player-type=custom\u0026show-info=false\u0026show-logo=false\u0026hd=1",
+        "slides_url": "http://www.slideshare.net/slideshow/embed_code/26501715",
+        "name": "Безопасность веб-приложений"
+    },
+    {
+        "id": 41,
+        "lector_id": 181,
+        "native_id": 1344,
+        "video_url": "http://video.yandex.ru/iframe/ya-events/x79ax18q9w.3802/?player-type=custom\u0026show-info=false\u0026show-logo=false\u0026hd=1",
+        "slides_url": "http://www.slideshare.net/slideshow/embed_code/26502148",
+        "name": "Регулярные выражения "
+    },
+    {
+        "id": 42,
+        "lector_id": 183,
+        "native_id": 1292,
+        "video_url": "http://video.yandex.ru/iframe/ya-events/yc39l9dh0a.4723/?player-type=custom\u0026show-info=false\u0026show-logo=false\u0026hd=1",
+        "slides_url": "http://www.slideshare.net/slideshow/embed_code/26263542",
+        "name": "Командная строка Unix"
+    },
+    {
+        "id": 43,
+        "lector_id": 185,
+        "native_id": 1345,
+        "video_url": null,
+        "slides_url": "http://www.slideshare.net/slideshow/embed_code/26503527",
+        "name": "Архитектура веб-сервисов"
+    },
+    {
+        "id": 44,
+        "lector_id": 185,
+        "native_id": 1340,
+        "video_url": "http://video.yandex.ru/iframe/ya-events/uery0fxkg2.7247/?player-type=custom\u0026show-info=false\u0026show-logo=false\u0026hd=1",
+        "slides_url": "http://www.slideshare.net/slideshow/embed_code/26501860",
+        "name": "Языки программирования "
+    },
+    {
+        "id": 45,
+        "lector_id": 189,
+        "native_id": 1326,
+        "video_url": "http://video.yandex.ru/iframe/ya-events/u7neb4ukb7.4729/?player-type=custom\u0026show-info=false\u0026show-logo=false\u0026hd=1",
+        "slides_url": "http://www.slideshare.net/slideshow/embed_code/26495249",
+        "name": "Тестирование"
+    },
+    {
+        "id": 46,
+        "lector_id": 192,
+        "native_id": 1321,
+        "video_url": "http://video.yandex.ru/iframe/ya-events/oeunffeksq.5100/?player-type=custom\u0026show-info=false\u0026show-logo=false\u0026hd=1",
+        "slides_url": null,
+        "name": "Cистемы контроля версий "
+    },
+    {
+        "id": 47,
+        "lector_id": 193,
+        "native_id": 1291,
+        "video_url": "http://video.yandex.ru/iframe/ya-events/mifh2zd4xw.7143/?player-type=custom\u0026show-info=false\u0026show-logo=false\u0026hd=1",
+        "slides_url": "http://www.slideshare.net/slideshow/embed_code/26263370",
+        "name": "Вики-синтаксис"
+    },
+    {
+        "id": 48,
+        "lector_id": 193,
+        "native_id": 1290,
+        "video_url": "http://video.yandex.ru/iframe/ya-events/hlgkkpcf67.3822/?player-type=custom\u0026show-info=false\u0026show-logo=false\u0026hd=1",
+        "slides_url": null,
+        "name": "Документирование информации"
+    },
+    {
+        "id": 49,
+        "lector_id": 190,
+        "native_id": 1289,
+        "video_url": "http://video.yandex.ru/iframe/ya-events/u7myq83g9q.4811/?player-type=custom\u0026show-info=false\u0026show-logo=false\u0026hd=1",
+        "slides_url": "http://www.slideshare.net/slideshow/embed_code/26263573",
+        "name": "Общий цикл разработки (dev-cycle)"
+    },
+    {
+        "id": 50,
+        "lector_id": 182,
+        "native_id": 1286,
+        "video_url": "http://video.yandex.ru/iframe/ya-events/r29oly6fy4.4720/?player-type=custom\u0026show-info=false\u0026show-logo=false\u0026hd=1",
+        "slides_url": "http://www.slideshare.net/slideshow/embed_code/26263315",
+        "name": "Вводная по ШРИ"
+    },
+    {
+        "id": 51,
+        "lector_id": 186,
+        "native_id": 1288,
+        "video_url": "http://video.yandex.ru/iframe/ya-events/vnsrv1de6g.4103/?player-type=custom\u0026show-info=false\u0026show-logo=false\u0026hd=1",
+        "slides_url": null,
+        "name": "История успеха выпускников ШРИ"
+    }
+]

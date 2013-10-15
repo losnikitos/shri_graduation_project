@@ -1,52 +1,109 @@
-    angular.module('shri', ['shri.services'])
-        .config(['$routeProvider', function($routeProvider) {
-            $routeProvider.
-            when('/', {controller:StudentsCtrl, templateUrl:'list.html'}).
-            when('/edit/:studentID', {controller: EditStudentCtrl, templateUrl:'parts/editStudent.html'}).
+var app = angular.module('app', ['ngRoute', 'ngAnimate', 'route-segment', 'view-segment', 'ngResource', 'shri.components', '$strap.directives'], function () {});
 
-            when('/students', {templateUrl: 'parts/students.html', controller: StudentsCtrl}).
-            when('/students/:studentID', {templateUrl: 'parts/studentDetails.html', controller: StudentDetailsCtrl}).
+app.config(function ($routeSegmentProvider, $routeProvider) {
 
-            when('/courses', {templateUrl: 'parts/courses.html', controller: CoursesCtrl}).
-            when('/courses/:courseID', {templateUrl: 'parts/courseDetails.html', controller: CourseDetailsCtrl}).
-            otherwise({redirectTo: '/'})}]);
+    $routeSegmentProvider.options.autoLoadTemplates = true;
 
+    $routeSegmentProvider
+        .when('/students', 'students')
+        .when('/students/:id', 'students.details')
+        .when('/lectures', 'lectures')
+        .when('/lectures/:id', 'lecture.details')
 
+        .segment('students', {
+            templateUrl: 'parts/studentsList.html',
+            controller: StudentsCtrl,
+            resolve: {
 
-//    config(['$routeProvider', function ($routeProvider) {
-//        $routeProvider.
-//
-//            when('/', {controller:StudentsCtrl, templateUrl:'list.html'}).
-//            when('/edit/:studentID', {controller: EditStudentCtrl, templateUrl:'parts/editStudent.html'}).
-//
-//            when('/students', {templateUrl: 'parts/students.html', controller: StudentsCtrl}).
-//            when('/students/:studentID', {templateUrl: 'parts/studentDetails.html', controller: StudentDetailsCtrl}).
-//
-//            when('/courses', {templateUrl: 'parts/courses.html', controller: CoursesCtrl}).
-//            when('/courses/:courseID', {templateUrl: 'parts/courseDetails.html', controller: CourseDetailsCtrl}).
-//            otherwise({redirectTo: '/'})}]);
-//
-//
+                data: function ($timeout, loader, Data) {
+                    Data('students');
+                }}})
 
+        .within()
+        .segment('details', {
+            templateUrl: 'parts/studentExpanded.html',
+            controller: StudentDetailsCtrl,
+            dependencies: ['id']})
+        .up()
 
-$(function () {
-    //parallax scrolling
-    var bg = $(".jumbotron");
-    $(window).scroll(function (e) {
-        parallaxScroll(bg);
-    });
+        .segment('lectures', {
+            templateUrl: 'parts/lecture.html',
+            controller: MainCtrl})
 
-/*    $("h1").click(function () {
-        $('#students-list').isotope({
-            itemSelector: '.person'
-        });
-    })*/
+        .within()
+        .segment('details', {
+            templateUrl: 'parts/lectureExpanded.html'})
+        .up();
 
-
+        $routeProvider.otherwise({redirectTo: '/students'});
 });
 
-function parallaxScroll(el) {
-    var yPos = -($(window).scrollTop() / 2) - 50;
-    var coords = 'center ' + yPos + 'px';
-    el.css({ backgroundPosition: coords });
+app.value('loader', {show: false});
+
+function MainCtrl($scope, $routeSegment, loader, Data) {
+
+    $scope.$routeSegment = $routeSegment;
+    $scope.loader = loader;
+    $scope.students = Data('students');
 }
+
+function StudentsCtrl($scope, $routeSegment, Data) {
+    $scope.students = Data('students');
+//    console.log('studstrl'+$scope.students[3]);
+
+    var students = Data('students');
+
+    var numColumns = 5;
+    var rowsCount = Math.ceil(students.length / numColumns);
+
+    var rows = [];
+    for (var i = 0; i < rowsCount; i++) {
+        rows[i] = [];
+        for (var j = 0; j < numColumns; j++) {
+            var s = students[i * numColumns + j];
+            if (s) rows[i][j] = s;
+        }
+    }
+    $scope.rows = rows;
+
+}
+
+
+function StudentDetailsCtrl($scope, $routeSegment, Data) {
+
+//    $scope.person = Data('students')[$scope.id];
+
+//    $scope.person = {
+//        id: 1,
+//        first_name: "John",
+//        last_name: "Doe"
+//    };
+
+
+}
+
+app.factory('Data', function ($resource) {
+    var loader = $resource('data/:name.json');
+    var loadList = ['students', 'lectures'];
+    var data = {};
+    for (var i = 0; i < loadList.length; i++)
+        data[loadList[i]] = loader.query({name: (loadList[i])});
+
+    return function (key) {
+        return data[key];
+    }
+});
+
+app.directive('myDirective', function () {
+    return {
+        scope: true,
+        template: '<a class="btn" ng-class="{active: on}" ng-click="toggle()">Toggle me!</a>',
+        link: function (scope, element, attrs) {
+            scope.on = false;
+
+            scope.toggle = function () {
+                scope.on = !$scope.on;
+            };
+        }
+    };
+});
