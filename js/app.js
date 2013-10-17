@@ -1,4 +1,4 @@
-var app = angular.module('app', ['ngRoute', 'ngAnimate', 'route-segment', 'view-segment', 'ngResource', 'shri.components', '$strap.directives'], function () {});
+var app = angular.module('app', ['ngRoute', 'ngAnimate', 'route-segment', 'view-segment', 'ngResource', '$strap.directives'], function () {});
 
 app.config(function ($routeSegmentProvider, $routeProvider) {
 
@@ -12,12 +12,7 @@ app.config(function ($routeSegmentProvider, $routeProvider) {
 
         .segment('students', {
             templateUrl: 'parts/studentsList.html',
-            controller: StudentsCtrl,
-            resolve: {
-
-                data: function ($timeout, loader, Data) {
-                    Data('students');
-                }}})
+            controller: StudentsCtrl })
 
         .within()
         .segment('details', {
@@ -49,22 +44,7 @@ function MainCtrl($scope, $routeSegment, loader, Data) {
 
 function StudentsCtrl($scope, $routeSegment, Data) {
     $scope.students = Data('students');
-//    console.log('studstrl'+$scope.students[3]);
-
     var students = Data('students');
-
-    var numColumns = 5;
-    var rowsCount = Math.ceil(students.length / numColumns);
-
-    var rows = [];
-    for (var i = 0; i < rowsCount; i++) {
-        rows[i] = [];
-        for (var j = 0; j < numColumns; j++) {
-            var s = students[i * numColumns + j];
-            if (s) rows[i][j] = s;
-        }
-    }
-    $scope.rows = rows;
 
 }
 
@@ -78,7 +58,7 @@ function StudentDetailsCtrl($scope, $routeSegment, Data) {
 //        first_name: "John",
 //        last_name: "Doe"
 //    };
-
+    console.log($routeSegment);
 
 }
 

@@ -7,6 +7,14 @@
 }
 
 @font-face {
+    font-family: 'MuseoSansCyrl-500';
+    src: url('../assets/fonts/28B539_0_0.eot');
+    src: url('../assets/fonts/28B539_0_0.eot?#iefix') format('embedded-opentype'), url('../assets/fonts/28B539_0_0.woff') format('woff'), url('../assets/fonts/28B539_0_0.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
     font-family: 'PT Sans';
     src: url('../assets/fonts/PTS75F-webfont.eot');
     src: url('../assets/fonts/PTS75F-webfont.eot?#iefix') format('embedded-opentype'), url('../assets/fonts/PTS75F-webfont.woff') format('woff'), url('../assets/fonts/PTS75F-webfont.ttf') format('truetype'), url('../assets/fonts/PTS75F-webfont.svg#pt_sansbold') format('svg');
@@ -57,41 +65,14 @@ li {
     display: block;
 }
 
-.row {
-    text-align: center;
-    border: 1px dashed lawngreen;
-}
-
-.col {
-    display: inline-block;
-}
-
 /* Кружочек */
 .student-small .profile-picture {
     width: 150px;
     height: 150px;
+    /*max-width: 200px;*/
     border-radius: 500px;
     overflow: hidden;
     background-color: #bdc3c7;
-
-}
-
-ul {
-    list-style: none;
-}
-
-.student-small {
-    /*border: 1px dashed red;*/
-    width: 150px;
-    height: 150px;
-    margin: 5px;
-    display: inline-block;
-}
-
-.student-small .profile-picture {
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 5px;
 }
 
 .student-small .profile-picture:before {
@@ -101,40 +82,21 @@ ul {
     color: white;
     font-size: 90px;
     padding-left: 10px;
-    /*display: block;*/
-    /*position: absolute;*/
-    /*z-index: -999;*/
-    /*float: left;*/
 }
 
 .student-small .name {
     text-align: center;
 }
 
-/*.jumbotron {*/
-    /*background: url("../img/bg2.jpg") center -50px no-repeat;*/
-    /*background-attachment: fixed;*/
-    /*background-color: #3498db;*/
-    /*background-size: cover;*/
-    /*min-height: 600px;*/
-/*}*/
-
-/*.jumbotron h1 {*/
-    /*padding-top: 50px;*/
-    /*font-size: 2em;*/
-    /*color: white;*/
-    /*font-family: 'PT Sans', sans-serif;*/
-    /*font-weight: 300;*/
-    /*text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);*/
-    /*text-align: center;*/
-/*}*/
+.student-small {
+    margin-bottom: 30px;
+}
 
 .jumbotron img {
     height: 40px;
 }
 
 .navigation {
-    /*position:fixed;*/
     padding: 20px;
     float: right;
 }
@@ -173,9 +135,8 @@ header {
     /*background-attachment: fixed;*/
 }
 
-.navbar-inverse .navbar-inner
-{
-    background-color: rgba(0,0,0,.2);
+.navbar-inverse .navbar-inner {
+    background-color: rgba(0, 0, 0, .2);
 
 }
 
@@ -231,24 +192,17 @@ header h2 {
 .student {
     /*width: 200px;*/
     /*height: 200px;*/
-    overflow: hidden;
+    /*overflow: hidden;*/
     /*padding: 30px;*/
     /*border: 1px solid #7f8c8d;*/
     min-height: 460px;
-    font-family: 'PT Sans', sans-serif;
+    /*font-family: 'PT Sans', sans-serif;*/
     font-weight: 300;
     font-size: 1.2em;
 }
 
 .popover {
     max-width: 960px !important;
-}
-.student .name {
-    /*text-align: left;*/
-    /*font-family: 'PT Sans Narrow', sans-serif;*/
-    /*color: #e74c3c;*/
-    font-weight: 300;
-    /*font-size: 2em;*/
 }
 
 .student .profile-picture {
@@ -260,20 +214,28 @@ header h2 {
     overflow: hidden;
 }
 
-.links {
-    margin-top: 20px;
-}
 
-.links a {
+.icon {
     font-family: 'Web Symbols';
-    font-size: 16px;
-    color: #7f8c8d;
+    font-size: 12px;
+    color: #333;
 }
 
-.links a:hover {
+.link a:hover {
     text-decoration: none;
     color: #e74c3c;
 }
+
+.link a{
+    font-size: 12px;
+    float:left;
+}
+
+.link .icon
+{
+    float: left;
+}
+
 
 .jumbotron {
     overflow: hidden;
@@ -297,8 +259,65 @@ header h2 {
     line-height: 1;
 }
 
-.student-small a{
-    display:block;
-    margin-left: auto;
-    margin-right: auto;
+.student-small a {
+    /*display:block;*/
+    /*margin-left: auto;*/
+    /*margin-right: auto;*/
+}
+
+.modal {
+    width: 960px;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 20px;
+    margin-left: -480px;
+    top: 50%;
+    left: 50%;
+}
+
+.modal.fade {
+    top: 10%;
+}
+
+.profile-picture-big {
+    width: 220px;
+    height: 220px;
+    background-position: 50% 0;
+    position: relative;
+    top: -50px;
+    z-index: 1100;
+    /*margin: 20px;*/
+}
+
+.student{
+    font-family: 'MuseoSansCyrl-500','Helvetica Neue', 'Helvetica', sans-serif;
+}
+.student .about {
+    font-size: 13px;
+    font-weight: 200;
+    /*line-height: 30px;*/
+    /*color: inherit;*/
+    /*margin-left: 0;*/
+    max-height: 400px;
+    overflow: scroll;
+
+}
+
+.student .name {
+    margin-bottom: 0;
+    font-size: 80px;
+    line-height: 1;
+    letter-spacing: -1px;
+    color: #333;
+    text-transform: uppercase;
+}
+
+.student .city
+{
+    font-size: 1.5em;
+}
+
+.icon:hover
+{
+    text-decoration: none;
 }

@@ -1,31 +1,34 @@
-<div class="student">
-    <h2 class="name">{{person.first_name}} {{person.last_name}}</h2>
-
-    <div class="profile-picture-big">
-        <img ng-src="{{person.link_photo}}">
+<div class="student row">
+    <div class="span3">
+        <div class="profile-picture-big" back-img="{{person.link_photo}}"></div>
+        <div class="link">
+            <span class="icon">vkontakte</span>
+            <a ng-href="{{person.link_vk}}"> {{person.link_vk}}</a>
+        </div>
+        <div class="link"><span class="icon">facebook</span><a ng-href="{{person.link_facebook}}">
+            {{person.link_facebook}}</a></div>
+        <div class="link"><span class="icon">github</span><a ng-href="{{person.link_github}}">
+            {{person.link_github}}</a></div>
+        <div class="link"><span class="icon">heart</span><a ng-href="{{person.link_yaru}}"> {{person.link_yaru}}</a>
+        </div>
     </div>
 
-    <!--<button class="btn" ng-click="">collapse</button>-->
-    <div class="about">{{person.about}}</div>
-    <div class="links">
-        <a ng-href="{{person.link_vk}}">vkontakte</a>
-        <a ng-href="{{person.link_facebook}}">facebook</a>
-        <a ng-href="{{person.link_github}}">github</a>
-        <a ng-href="{{person.link_yaru}}">heart</a>
+    <div class="span9">
+        <div class="row">
+            <div class="span9">
+                <a class="icon pull-right" ng-click="hide()" href="#" style="font-size: 80px">close</a>
+
+                <h2 class="name">{{person.first_name}}<br>{{person.last_name}}</h2>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="about span5">{{person.about}}</div>
+            <div class="span4">
+                <div class="city" >из г. {{person.city}}</div>
+                <a href="#" style="background: lightgray; width:200px; height: 200px;"></a>
+            </div>
+        </div>
     </div>
 
-    <div><a href="#">Закрыть</a></div>
 </div>
-
-
-<!-- ФОРМА -->
-<!--<form name="popoverForm">-->
-<!--<p ng-bind-html-unsafe="popover.content"></p>-->
-<!--<br />-->
-<!--<pre>2 + 3 = {{ 2 + 3 }}</pre>-->
-<!--<div class="form-actions">-->
-<!--<button type="button" class="btn" ng-click="submitForm($popover)">Close</button>-->
-<!--<button class="btn btn-primary" ng-click="popover.saved=true;hide()">Save changes</button>-->
-<!--</div>-->
-<!--</form>-->
-<!---->

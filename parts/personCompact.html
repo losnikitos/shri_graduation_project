@@ -1,10 +1,7 @@
-<div class="student-small">
-
+<div class="student-small span3 text-center">
     <a ng-href="#/students/{{person.id}}"
-       data-unique="1"
-       bs-popover="'parts/studentExpanded.html'"
-       data-placement="bottom"
-       ng-controller="StudentDetailsCtrl">
+       ng-controller="StudentDetailsCtrl"
+            bs-modal="'parts/studentExpanded.html'">
 
         <img class="profile-picture" ng-src="{{person.link_photo}}">
 
