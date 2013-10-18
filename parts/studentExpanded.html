@@ -1,23 +1,28 @@
 <div class="student row">
     <div class="span3">
-        <div class="profile-picture-big" back-img="{{person.link_photo}}"></div>
+        <div class="profile-picture big" back-img="{{person.link_photo}}"></div>
         <div class="link">
             <span class="icon">vkontakte</span>
             <a ng-href="{{person.link_vk}}"> {{person.link_vk}}</a>
         </div>
-        <div class="link"><span class="icon">facebook</span><a ng-href="{{person.link_facebook}}">
-            {{person.link_facebook}}</a></div>
-        <div class="link"><span class="icon">github</span><a ng-href="{{person.link_github}}">
-            {{person.link_github}}</a></div>
-        <div class="link"><span class="icon">heart</span><a ng-href="{{person.link_yaru}}"> {{person.link_yaru}}</a>
+        <div class="link">
+            <span class="icon">facebook</span>
+            <a ng-href="{{person.link_facebook}}"> {{person.link_facebook}}</a>
+        </div>
+        <div class="link">
+            <span class="icon">github</span>
+            <a ng-href="{{person.link_gihub}}"> {{person.link_gihub}}</a>
+        </div>
+        <div class="link">
+            <span class="icon">heart</span>
+            <a ng-href="{{person.link_yaru}}"> {{person.link_yaru}}</a>
         </div>
     </div>
 
     <div class="span9">
         <div class="row">
             <div class="span9">
-                <a class="icon pull-right" ng-click="hide()" href="#" style="font-size: 80px">close</a>
-
+                <a class="icon pull-right" ng-click="hide()" href="#/students" style="font-size: 80px; margin-right: -50px">close</a>
                 <h2 class="name">{{person.first_name}}<br>{{person.last_name}}</h2>
             </div>
         </div>
@@ -26,7 +31,6 @@
             <div class="about span5">{{person.about}}</div>
             <div class="span4">
                 <div class="city" >из г. {{person.city}}</div>
-                <a href="#" style="background: lightgray; width:200px; height: 200px;"></a>
             </div>
         </div>
     </div>

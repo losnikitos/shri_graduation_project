@@ -7,8 +7,9 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-
-<div class="ng-cloak" ng-controller="MainCtrl">
+h1
+<!--ng-controller="MainCtrl"-->
+<div class="ng-cloak">
 
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="navbar-inner">
@@ -33,12 +34,7 @@
 
 
     <h1>Студенты</h1>
-
-    <div class="container">
-        <div class="row">
-            <person ng-repeat="person in students"></person>
-        </div>
-    </div>
+    <div app-view-segment="0"></div>
 
 
     <!--</div>-->

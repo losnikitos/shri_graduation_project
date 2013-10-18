@@ -1,18 +1,18 @@
-<div ng-controller="StudentsCtrl">
-
-
-    <li ng-repeat="student in students" ng-class="{active: $routeSegment.$routeParams.id == student.id}">
-        <div ng-include="'parts/studentCompact.html'"></div>
-        <div class="anim expandedView" app-view-segment="1"></div>
-    </li>
-    </ul>
-
-
+<div class="container">
+    <div class="row" >
+        <person ng-repeat="person in students"></person>
+    </div>
 </div>
 
+<!--Послденяя версия-->
 
-<!--ng-show="$routeSegment.$routeParams.id != null"-->
-
+<!--<div ng-controller="StudentsCtrl">-->
+    <!--<li ng-repeat="student in students" ng-class="{active: $routeSegment.$routeParams.id == student.id}">-->
+        <!--<div ng-include="'parts/studentCompact.html'"></div>-->
+        <!--<div class="anim expandedView" app-view-segment="1"></div>-->
+    <!--</li>-->
+    <!--</ul>-->
+<!--</div>-->
 
 <!--МАТРИЦА-->
 

@@ -1,4 +1,5 @@
-var app = angular.module('app', ['ngRoute', 'ngAnimate', 'route-segment', 'view-segment', 'ngResource', '$strap.directives'], function () {});
+var app = angular.module('app', ['ngRoute', 'ngAnimate', 'route-segment', 'view-segment', 'ngResource', '$strap.directives'], function () {
+});
 
 app.config(function ($routeSegmentProvider, $routeProvider) {
 
@@ -15,51 +16,47 @@ app.config(function ($routeSegmentProvider, $routeProvider) {
             controller: StudentsCtrl })
 
         .within()
-        .segment('details', {
-            templateUrl: 'parts/studentExpanded.html',
-            controller: StudentDetailsCtrl,
-            dependencies: ['id']})
-        .up()
+            .segment('details', {
+                templateUrl: 'parts/studentExpanded.html',
+                controller: StudentDetailsCtrl,
+                dependencies: ['id']})
+            .up()
 
-        .segment('lectures', {
-            templateUrl: 'parts/lecture.html',
-            controller: MainCtrl})
+        .segment('lectures.details', {
+            templateUrl: 'parts/lectureExpanded.html'});
 
-        .within()
-        .segment('details', {
-            templateUrl: 'parts/lectureExpanded.html'})
-        .up();
-
-        $routeProvider.otherwise({redirectTo: '/students'});
+    $routeProvider.otherwise({redirectTo: '/students'});
 });
 
 app.value('loader', {show: false});
 
-function MainCtrl($scope, $routeSegment, loader, Data) {
-
-    $scope.$routeSegment = $routeSegment;
-    $scope.loader = loader;
+function StudentsCtrl($scope, $routeSegment, $modal, Data, $location) {
     $scope.students = Data('students');
-}
 
-function StudentsCtrl($scope, $routeSegment, Data) {
-    $scope.students = Data('students');
-    var students = Data('students');
+    $scope.expandPerson = function(person) {
+        console.log("Expand function called for " + person.first_name);
+        $location.path("/students/" + person.id);
 
+        var newScope = $scope.$new();
+        newScope.person = person;
+
+        $modal({
+            template: 'parts/studentExpanded.html',
+            persist: true,
+            show: true,
+            backdrop: 'static',
+            scope: newScope
+        });
+    }
+
+    var id = $routeSegment.$routeParams.id;
+    console.log("Id="+id);
+    if(id) $scope.expandPerson($scope.students[id-1]);
 }
 
 
 function StudentDetailsCtrl($scope, $routeSegment, Data) {
-
-//    $scope.person = Data('students')[$scope.id];
-
-//    $scope.person = {
-//        id: 1,
-//        first_name: "John",
-//        last_name: "Doe"
-//    };
-    console.log($routeSegment);
-
+    console.log("StudentDetailsController called for id = " + $routeSegment.$routeParams.id);
 }
 
 app.factory('Data', function ($resource) {
@@ -72,18 +69,4 @@ app.factory('Data', function ($resource) {
     return function (key) {
         return data[key];
     }
-});
-
-app.directive('myDirective', function () {
-    return {
-        scope: true,
-        template: '<a class="btn" ng-class="{active: on}" ng-click="toggle()">Toggle me!</a>',
-        link: function (scope, element, attrs) {
-            scope.on = false;
-
-            scope.toggle = function () {
-                scope.on = !$scope.on;
-            };
-        }
-    };
 });

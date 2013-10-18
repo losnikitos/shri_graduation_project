@@ -1,10 +1,7 @@
 <div class="student-small span3 text-center">
-    <a ng-href="#/students/{{person.id}}"
-       ng-controller="StudentDetailsCtrl"
-            bs-modal="'parts/studentExpanded.html'">
-
-        <img class="profile-picture" ng-src="{{person.link_photo}}">
-
+    <a ng-click="expandPerson(person)">
+    <!--<a href="#/students/{{person.id}}">-->
+    <div class="profile-picture small" back-img="{{person.link_photo}}"></div>
         <div class="name">
             {{person.first_name}}
             <br>
